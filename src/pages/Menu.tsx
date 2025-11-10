@@ -12,6 +12,7 @@ const Menu = () => {
   const menuItems = [
     { title: "Implantação", path: "/implantacao", description: "Conheça o projeto" },
     { title: "Perspectivas", path: "/perspectivas", description: "Visualize os ambientes" },
+    { title: "Plantas", path: "/plantas", description: "Descubra as tipologias" },
     { title: "Localização", path: "/localizacao", description: "Localização privilegiada" },
     { title: "Diferenciais", path: "/diferenciais", description: "Exclusividade e luxo" },
   ];

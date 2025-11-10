@@ -12,6 +12,7 @@ const Implantacao = () => {
         label: "Pavimento Garagem 1",
         heading: "Pavimento Garagem 01",
         accent: "#A15C46",
+        image: "/implantacao/pavimento-garagem-1.png",
         items: [
           { code: "12", title: "Mini Market" },
           { code: "13", title: "Espaço Corpo" },
@@ -23,6 +24,7 @@ const Implantacao = () => {
         label: "Pavimento Garagem 2",
         heading: "Pavimento Garagem 02",
         accent: "#9A533E",
+        image: "/implantacao/pavimento-garagem-2.png",
         items: [
           { code: "09", title: "Espaço Gourmet" },
           { code: "10", title: "Salão de Festa" },
@@ -33,6 +35,7 @@ const Implantacao = () => {
         label: "Pavimento Garagem 3",
         heading: "Pavimento Garagem 03",
         accent: "#8F4C37",
+        image: "/implantacao/pavimento-garagem-3.png",
         items: [
           { code: "01", title: "Porte Cochère" },
           { code: "02", title: "Acesso Veículos" },
@@ -49,6 +52,7 @@ const Implantacao = () => {
         label: "Pavimento Lazer",
         heading: "Pavimento Lazer",
         accent: "#7F3F2D",
+        image: "/implantacao/pavimento-lazer.png",
         items: [
           { code: "15", title: "Piscina Adulto" },
           { code: "16", title: "Piscina Infantil" },
@@ -122,41 +126,62 @@ const Implantacao = () => {
             </nav>
 
             <article className="rounded-3xl bg-white/70 p-10 shadow-[0_25px_45px_rgba(0,0,0,0.08)] backdrop-blur-md">
-              <div className="space-y-10">
-                <div className="space-y-4">
-                  <span className="text-sm uppercase tracking-[0.4em] text-[#7B4633]/70">
-                    Implantação
-                  </span>
-                  <h2
-                    className="text-2xl font-semibold uppercase tracking-[0.35em]"
-                    style={{ color: activeSection.accent }}
-                  >
-                    {activeSection.heading}
-                  </h2>
-                </div>
+              <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+                <div className="space-y-10">
+                  <div className="space-y-4">
+                    <span className="text-sm uppercase tracking-[0.4em] text-[#7B4633]/70">
+                      Implantação
+                    </span>
+                    <h2
+                      className="text-2xl font-semibold uppercase tracking-[0.35em]"
+                      style={{ color: activeSection.accent }}
+                    >
+                      {activeSection.heading}
+                    </h2>
+                  </div>
 
-                <div className="relative pl-10">
-                  <div
-                    className="absolute left-2 top-0 h-full w-px"
-                    style={{ backgroundColor: `${activeSection.accent}59` }}
-                  />
+                  <div className="relative pl-10">
+                    <div
+                      className="absolute left-2 top-0 h-full w-px"
+                      style={{ backgroundColor: `${activeSection.accent}59` }}
+                    />
 
-                  <div className="space-y-6">
-                    {activeSection.items.map((item) => (
-                      <div key={item.code} className="flex items-center gap-6">
-                        <span
-                          className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-white shadow-lg"
-                          style={{ backgroundColor: activeSection.accent }}
-                        >
-                          {item.code}
-                        </span>
-                        <span className="text-base font-medium uppercase tracking-[0.35em]" style={{ color: activeSection.accent }}>
-                          {item.title}
-                        </span>
-                      </div>
-                    ))}
+                    <div className="space-y-6">
+                      {activeSection.items.map((item) => (
+                        <div key={item.code} className="flex items-center gap-6">
+                          <span
+                            className="flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold text-white shadow-lg"
+                            style={{ backgroundColor: activeSection.accent }}
+                          >
+                            {item.code}
+                          </span>
+                          <span
+                            className="text-base font-medium uppercase tracking-[0.35em]"
+                            style={{ color: activeSection.accent }}
+                          >
+                            {item.title}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
+
+                {activeSection.image && (
+                  <figure className="relative overflow-hidden rounded-2xl border border-[#B18A74]/40 shadow-[0_18px_32px_rgba(0,0,0,0.12)]">
+                    <img
+                      src={activeSection.image}
+                      alt={activeSection.heading}
+                      className="h-full w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-black/10" />
+                    <figcaption className="absolute bottom-4 left-4 right-4 rounded-full bg-white/80 px-4 py-2 text-center text-xs uppercase tracking-[0.35em] text-[#7B4633] shadow-sm">
+                      Planta {activeSection.heading}
+                    </figcaption>
+                  </figure>
+                )}
               </div>
             </article>
           </section>
