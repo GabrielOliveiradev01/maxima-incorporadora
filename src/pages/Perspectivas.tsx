@@ -2,42 +2,115 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 
-const PERSPECTIVA_FILES = [
-  "Captura de Tela 2025-11-09 às 15.23.25.jpg",
-  "Captura de Tela 2025-11-09 às 15.23.42.jpg",
-  "Captura de Tela 2025-11-09 às 15.23.56.jpg",
-  "Captura de Tela 2025-11-09 às 15.25.00.jpg",
-  "Captura de Tela 2025-11-09 às 15.25.13.jpg",
-  "Captura de Tela 2025-11-09 às 15.25.33.jpg",
-  "Captura de Tela 2025-11-09 às 15.25.42.jpg",
-  "Captura de Tela 2025-11-09 às 15.26.00.jpg",
-  "Captura de Tela 2025-11-09 às 15.26.24.jpg",
-  "Captura de Tela 2025-11-09 às 15.26.41.jpg",
-  "Captura de Tela 2025-11-09 às 15.26.56.jpg",
-  "Captura de Tela 2025-11-09 às 15.27.06.jpg",
-  "Captura de Tela 2025-11-09 às 15.27.17.jpg",
-  "Captura de Tela 2025-11-09 às 15.27.33.jpg",
-  "Captura de Tela 2025-11-09 às 15.27.42.jpg",
-  "Captura de Tela 2025-11-09 às 15.27.56.jpg",
-  "Captura de Tela 2025-11-09 às 15.28.07.jpg",
-  "Captura de Tela 2025-11-09 às 15.28.46.jpg",
-  "Captura de Tela 2025-11-09 às 15.29.07.jpg",
-  "Captura de Tela 2025-11-09 às 15.29.32.jpg",
-  "Captura de Tela 2025-11-09 às 15.32.56.jpg",
+const PERSPECTIVA_GALLERY = [
+  {
+    file: "Zafir_Presidente_Altino_Voo_Piscina_HR.jpg",
+    title: "Piscina Sky Lounge",
+    subtitle: "Bungalows imersivos com vista elevada",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Piscina_Bangalo_HR.jpg",
+    title: "Piscina Bangalô Privilege",
+    subtitle: "Águas tranquilas, lounges exclusivos",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Beach_Tennis_HR.jpg",
+    title: "Beach Tennis Club",
+    subtitle: "Esporte à beira de um cenário urbano",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Sport_Bar_HR.jpg",
+    title: "Sport Bar Signature",
+    subtitle: "Celebrar vitórias em alto estilo",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Churrasqueira_HR.jpg",
+    title: "Terraço Gourmet",
+    subtitle: "Sabores ao ar livre com atmosfera acolhedora",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Gourmet_HR.jpg",
+    title: "Cozinha Experiência",
+    subtitle: "Gastronomia autoral em ambiente sofisticado",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Mini_Market_HR.jpg",
+    title: "Mini Market 24h",
+    subtitle: "Praticidade premium ao alcance das mãos",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Coworking_HR.jpg",
+    title: "Coworking Boutique",
+    subtitle: "Produtividade envolta em design contemporâneo",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Espaco_Corpo_HR.jpg",
+    title: "Studio Corpore",
+    subtitle: "Wellness intensivo com equipamentos de ponta",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Yoga_HR.jpg",
+    title: "Sala Zen & Yoga",
+    subtitle: "Respire equilíbrio entre luz e textura",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Espaco_Jovem_HR.jpg",
+    title: "Espaço Jovem Urbano",
+    subtitle: "Um lounge criativo para novas conexões",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Brinquedoteca_HR.jpg",
+    title: "Brinquedoteca Explorers",
+    subtitle: "Aventuras lúdicas para a infância",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Playground_HR.jpg",
+    title: "Playground Adventure",
+    subtitle: "Diversão com toques de paisagismo autoral",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Pet_Care_HR.jpg",
+    title: "Pet Care Experience",
+    subtitle: "Bem-estar completo para os companheiros",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Quadra_Poli_HR.jpg",
+    title: "Quadra Multi Arenas",
+    subtitle: "Energia esportiva em ritmo urbano",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Redario_HR.jpg",
+    title: "Redário Contemplativo",
+    subtitle: "Calma suspendida sob o verde",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Portaria_Diurna_HR.jpg",
+    title: "Portaria Galeria",
+    subtitle: "Recepção com curadoria de materiais",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Hall_Lobby_HR.jpg",
+    title: "Hall Sculptural",
+    subtitle: "Primeira impressão em arquitetura sensorial",
+  },
+  {
+    file: "Zafir_Presidente_Albino_Espaco_Mulher_HR.jpg",
+    title: "Espaço Mulher Signature",
+    subtitle: "Autocuidado com aura de salão boutique",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Spa_Privativo_HR.jpg",
+    title: "Spa Privativo",
+    subtitle: "Imersão de relaxamento sob luz suave",
+  },
+  {
+    file: "Zafir_Presidente_Altino_Living_Ampliado_R02.jpg",
+    title: "Living Ampliado",
+    subtitle: "Conforto ilimitado em layout personalizável",
+  },
 ] as const;
 
-type PerspectivaFile = (typeof PERSPECTIVA_FILES)[number];
-
-const buildLabel = (file: PerspectivaFile) => {
-  const withoutExtension = file.replace(/\.[^/.]+$/, "");
-  const normalizedWhitespace = withoutExtension.replace(/_/g, " ").replace(/\s+/g, " ");
-  const formattedTime = normalizedWhitespace.replace(
-    /(\d{2})\.(?=\d{2}(?:\b|$))/g,
-    "$1:"
-  );
-
-  return formattedTime.trim();
-};
+type PerspectivaMedia = (typeof PERSPECTIVA_GALLERY)[number];
 
 const AUTO_PLAY_INTERVAL = 5000;
 
@@ -51,12 +124,11 @@ const Perspectivas = () => {
     ? `?v=${import.meta.env.VITE_ASSET_VERSION}`
     : "";
 
-  const images = useMemo(
+  const images = useMemo<Array<PerspectivaMedia & { src: string }>>(
     () =>
-      PERSPECTIVA_FILES.map((file) => ({
-        file,
-        label: buildLabel(file),
-        src: `${normalizedBasePath}perspectiva/${file}${assetQuery}`,
+      PERSPECTIVA_GALLERY.map((item) => ({
+        ...item,
+        src: `${normalizedBasePath}perspectiva/${item.file}${assetQuery}`,
       })),
     [normalizedBasePath, assetQuery],
   );
@@ -112,7 +184,7 @@ const Perspectivas = () => {
           >
             <img
               src={currentImage.src}
-              alt={currentImage.label}
+              alt={currentImage.title}
               className="w-full h-[60vh] md:h-[70vh] object-cover transition-opacity duration-1000 ease-in-out"
               loading="lazy"
               decoding="async"
@@ -122,9 +194,14 @@ const Perspectivas = () => {
 
         {/* Label */}
         <div className="text-center py-4">
-          <p className="font-cormorant text-sm tracking-[0.2em] text-foreground/60">
-            {currentImage.label.toUpperCase()}
-          </p>
+          <h2 className="font-playfair text-2xl md:text-3xl text-foreground/90">
+            {currentImage.title}
+          </h2>
+          {currentImage.subtitle && (
+            <p className="font-cormorant text-sm tracking-[0.2em] text-foreground/60 mt-2">
+              {currentImage.subtitle}
+            </p>
+          )}
         </div>
 
         {/* Thumbnails */}
@@ -142,7 +219,7 @@ const Perspectivas = () => {
               >
                 <img
                   src={image.src}
-                  alt={image.label}
+                  alt={image.title}
                   className="w-20 h-20 md:w-24 md:h-24 object-cover"
                   loading="lazy"
                   decoding="async"

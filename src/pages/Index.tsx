@@ -26,14 +26,23 @@ const Index = () => {
       </button>
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          loop 
-          muted 
+        <video
+          autoPlay
+          loop
+          muted
           playsInline
+          controls={false}
+          preload="auto"
+          onEnded={(event) => {
+            const target = event.currentTarget;
+            if (!target.loop) {
+              target.currentTime = 0;
+              target.play().catch(() => undefined);
+            }
+          }}
           className="w-full h-full object-cover"
         >
-          <source src="https://87e8595aa6dd4d620d55b960017f88ed.cdn.bubble.io/f1762656680176x637762499145653900/Maxima%20Ares%20Altino%20-%20Completo.mp4" type="video/mp4" />
+          <source src="/videos/apresentacao.mp4" type="video/mp4" />
         </video>
       </div>
 
