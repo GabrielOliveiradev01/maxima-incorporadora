@@ -89,9 +89,10 @@ const Implantacao = () => {
           <div className="flex items-center justify-between gap-6">
             <button
               onClick={() => navigate("/menu")}
-              className="flex items-center gap-2 text-sm font-medium text-[#7B4633]/80 transition-colors hover:text-[#7B4633]"
+              className="flex items-center gap-2 rounded-full border px-5 py-2 text-sm uppercase tracking-[0.4em] transition-all duration-300 hover:-translate-y-0.5"
+              style={{ borderColor: "#B18A74AA", color: "#7B4633CC" }}
             >
-              <ArrowLeft className="h-5 w-5" />
+              <ArrowLeft className="h-5 w-5" color="#7B4633" />
               Voltar
             </button>
 

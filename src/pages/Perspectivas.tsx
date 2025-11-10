@@ -166,9 +166,10 @@ const Perspectivas = () => {
         <div className="flex justify-between items-center px-6 py-6">
           <button
             onClick={() => navigate("/menu")}
-            className="flex items-center gap-2 text-foreground/80 hover:text-foreground font-cormorant text-lg transition-colors border border-foreground/20 px-4 py-2 active:scale-95"
+            className="flex items-center gap-2 rounded-full border px-5 py-2 text-sm uppercase tracking-[0.4em] transition-all duration-300 hover:-translate-y-0.5"
+            style={{ borderColor: "#B18A74AA", color: "#7B4633CC" }}
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4" color="#7B4633" />
             Voltar
           </button>
           <h1 className="font-cormorant text-xl tracking-[0.3em] text-foreground">

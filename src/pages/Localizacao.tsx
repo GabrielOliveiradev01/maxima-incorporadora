@@ -1,6 +1,6 @@
 import GeometricLines from "@/components/GeometricLines";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, MapPin, Clock } from "lucide-react";
+import { ArrowLeft, MapPin, Clock, Building, Layers, Ruler } from "lucide-react";
 
 const HIGHLIGHTS = [
   {
@@ -81,6 +81,58 @@ const LOCATION_GALLERY = [
   },
 ] as const;
 
+const PROJECT_FACTS = [
+  {
+    icon: Building,
+    title: "Endereço",
+    items: [
+      "Rua Albino José Freixeda, 99 – Presidente Altino",
+      "Projeto Legal: ZAFIR Construtora / Laboratório Urbano",
+      "Arquitetura: OSARQ Octávio de Siqueira Arquitetos",
+      "Interiores: Renata Cáfaro Arquitetura e Interiores",
+      "Paisagismo: Faisal Arquitetos Paisagistas",
+    ],
+  },
+  {
+    icon: Layers,
+    title: "Composição",
+    items: [
+      "Área do terreno: 2.855 m²",
+      "Torre única | 28 pavimentos",
+      "3 elevadores (2 sociais + 1 serviço)",
+      "184 apartamentos",
+      "281 vagas cobertas e descobertas",
+    ],
+  },
+  {
+    icon: Ruler,
+    title: "Tipologias",
+    items: [
+      "Apartamentos 2 dorms: a partir de 56 m² (1 vaga)",
+      "Apartamentos 3 dorms: a partir de 70 m² (2 vagas)",
+      "Coberturas Penthouse: a partir de 101 m²",
+      "Pav. Átrio: 6 unidades Garden",
+      "Pav. Tipo: 8 unidades",
+      "Pav. Penthouse 25ª: 4 penthouse + 2 tipo",
+      "Pav. Penthouse 26ª: 4 penthouse",
+    ],
+  },
+] as const;
+
+const AMENITIES = [
+  "Lobby com pé-direito duplo",
+  "Piscinas adulto e infantil com solarium",
+  "Beach Tennis e Sports Bar",
+  "Fitness, Espaço Yoga e Espaço Corpo",
+  "Bangalôs e quadra recreativa",
+  "Salão de festas e churrasqueira",
+  "Gazebo gourmet com spa privativo",
+  "Espaço Wellness e Espaço Jovem",
+  "Playground, brinquedoteca e coworking",
+  "Redário, praça da leitura",
+  "Pet Care, Pet Place e Mini Market",
+] as const;
+
 const Localizacao = () => {
   const navigate = useNavigate();
 
@@ -93,9 +145,10 @@ const Localizacao = () => {
           <div className="flex items-center justify-between gap-6">
             <button
               onClick={() => navigate("/menu")}
-              className="flex items-center gap-2 text-sm font-medium text-[#7B4633]/80 transition-colors hover:text-[#7B4633]"
+              className="flex items-center gap-2 rounded-full border px-5 py-2 text-sm uppercase tracking-[0.4em] transition-all duration-300 hover:-translate-y-0.5"
+              style={{ borderColor: "#B18A74AA", color: "#7B4633CC" }}
             >
-              <ArrowLeft className="h-5 w-5" />
+              <ArrowLeft className="h-5 w-5" color="#7B4633" />
               Voltar
             </button>
             <div className="hidden h-px flex-1 bg-gradient-to-r from-transparent via-[#7B4633]/40 to-transparent md:block" />
@@ -114,6 +167,18 @@ const Localizacao = () => {
               do trabalho, das escolas, do lazer e ao mesmo tempo longe do estresse. A cidade se conecta ao conforto
               de um lar bem localizado, em um endereço que cresce sem abrir mão do convívio.
             </p>
+            <div className="rounded-3xl bg-white/85 p-8 shadow-[0_18px_32px_rgba(0,0,0,0.08)]">
+              <h2 className="text-lg font-semibold uppercase tracking-[0.35em] text-[#7B4633]">
+                Tendência que traduz design
+              </h2>
+              <p className="mt-4 text-sm leading-relaxed text-[#3D2A22]/80">
+                Tendência traduzem que seu design. Design e arquitetura contemporânea destacam que se valoriza o novo
+                estilo de viver. Onde famílias sentem que o convívio ganha em mais sentido. Morar em Presidente Altino
+                é viver em família, com mobilidade, qualidade, segurança perto do trabalho, da escola, do lazer e longe
+                do estresse. Aqui, a cidade se conecta ao conforto de um lar bem localizado, em um bairro que cresce sem
+                perder o ritmo da vida em família.
+              </p>
+            </div>
           </header>
 
           <section className="grid gap-6 md:grid-cols-2">
@@ -176,6 +241,43 @@ const Localizacao = () => {
                 </figure>
               ))}
             </div>
+          </section>
+
+          <section className="space-y-8 rounded-3xl bg-white/85 p-10 shadow-[0_25px_45px_rgba(0,0,0,0.08)]">
+            <h2 className="text-lg font-semibold uppercase tracking-[0.35em] text-[#7B4633]">
+              Ficha técnica do empreendimento
+            </h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              {PROJECT_FACTS.map((group) => (
+                <div key={group.title} className="space-y-4">
+                  <div className="flex items-center gap-3 text-[#7B4633]">
+                    <group.icon className="h-5 w-5" />
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em]">{group.title}</h3>
+                  </div>
+                  <ul className="space-y-2 text-sm text-[#3D2A22]/80">
+                    {group.items.map((item) => (
+                      <li key={item} className="leading-relaxed">{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="space-y-4">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633]">
+                Áreas comuns equipadas e decoradas*
+              </h3>
+              <div className="grid gap-3 md:grid-cols-2">
+                {AMENITIES.map((amenity) => (
+                  <span key={amenity} className="text-sm text-[#3D2A22]/80">
+                    • {amenity}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-[#7B4633]/70">
+              *Entrega conforme memorial descritivo.
+            </p>
           </section>
 
           <footer className="space-y-2 border-t border-[#B18A74]/30 pt-6 text-xs uppercase tracking-[0.3em] text-[#7B4633]/70">

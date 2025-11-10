@@ -85,7 +85,7 @@ const Index = () => {
           {/* Continue Button */}
           <div className="mt-12">
             <button className="group relative px-12 py-5 border-2 border-gold/80 text-white font-cormorant text-lg tracking-[0.2em] active:scale-95 transition-all duration-300 hover:bg-gold/20 hover:border-gold backdrop-blur-sm">
-              <span className="relative z-10 drop-shadow-lg">Clique aqui para continuar</span>
+              <span className="relative z-10 drop-shadow-lg">Explorar empreendimento</span>
             </button>
           </div>
         </div>
