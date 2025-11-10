@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Luxury metallic color palette */
+    --background: 28 35% 82%;
+    --background-light: 30 40% 88%;
+    --background-dark: 25 30% 75%;
+    --foreground: 30 20% 20%;
+
+    --card: 28 35% 68%;
+    --card-foreground: 30 20% 88%;
+
+    --popover: 28 35% 68%;
+    --popover-foreground: 30 20% 88%;
+
+    --primary: 40 50% 75%;
+    --primary-foreground: 28 35% 65%;
+
+    --secondary: 30 30% 70%;
+    --secondary-foreground: 30 20% 88%;
+
+    --muted: 28 25% 60%;
+    --muted-foreground: 30 15% 80%;
+
+    --accent: 40 50% 75%;
+    --accent-foreground: 28 35% 65%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 40% 70%;
+    --input: 40 40% 70%;
+    --ring: 40 50% 75%;
+
+    --radius: 0.5rem;
+
+    /* Custom luxury colors */
+    --copper: 25 45% 45%;
+    --gold: 40 60% 70%;
+    --champagne: 40 45% 82%;
+    --cream: 30 25% 90%;
+
+    --sidebar-background: 28 35% 65%;
+    --sidebar-foreground: 30 20% 88%;
+    --sidebar-primary: 40 50% 75%;
+    --sidebar-primary-foreground: 28 35% 65%;
+    --sidebar-accent: 30 30% 70%;
+    --sidebar-accent-foreground: 30 20% 88%;
+    --sidebar-border: 40 40% 70%;
+    --sidebar-ring: 40 50% 75%;
+  }
+
+  .dark {
+    --background: 28 35% 82%;
+    --background-light: 30 40% 88%;
+    --background-dark: 25 30% 75%;
+    --foreground: 30 20% 20%;
+
+    --card: 28 35% 68%;
+    --card-foreground: 30 20% 88%;
+
+    --popover: 28 35% 68%;
+    --popover-foreground: 30 20% 88%;
+
+    --primary: 40 50% 75%;
+    --primary-foreground: 28 35% 65%;
+
+    --secondary: 30 30% 70%;
+    --secondary-foreground: 30 20% 88%;
+
+    --muted: 28 25% 60%;
+    --muted-foreground: 30 15% 80%;
+
+    --accent: 40 50% 75%;
+    --accent-foreground: 28 35% 65%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 40% 70%;
+    --input: 40 40% 70%;
+    --ring: 40 50% 75%;
+
+    --copper: 25 45% 45%;
+    --gold: 40 60% 70%;
+    --champagne: 40 45% 82%;
+    --cream: 30 25% 90%;
+
+    --sidebar-background: 28 35% 65%;
+    --sidebar-foreground: 30 20% 88%;
+    --sidebar-primary: 40 50% 75%;
+    --sidebar-primary-foreground: 28 35% 65%;
+    --sidebar-accent: 30 30% 70%;
+    --sidebar-accent-foreground: 30 20% 88%;
+    --sidebar-border: 40 40% 70%;
+    --sidebar-ring: 40 50% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
