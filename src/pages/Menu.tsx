@@ -14,7 +14,6 @@ const Menu = () => {
     { title: "Perspectivas", path: "/perspectivas", description: "Visualize os ambientes" },
     { title: "Plantas", path: "/plantas", description: "Descubra as tipologias" },
     { title: "Localização", path: "/localizacao", description: "Localização privilegiada" },
-    { title: "Diferenciais", path: "/diferenciais", description: "Exclusividade e luxo" },
   ];
 
   const handleMenuClick = (path: string, index: number) => {
