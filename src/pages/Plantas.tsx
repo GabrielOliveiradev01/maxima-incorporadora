@@ -35,7 +35,7 @@ const PLANT_COLLECTION = [
         signature: "Terraço com churrasqueira a carvão",
         summary:
           "Ambientes integrados com previsão de ar-condicionado na sala e suíte, contemplando banheiros com ventilação natural.",
-        image: "/Plantas/apartamento-72m2.png",
+        image: "/Plantas/apartamento-72m2-3dorms-2suites.png",
         highlights: [
           "Terraço com churrasqueira a carvão",
           "2 vagas de garagem",
@@ -56,7 +56,7 @@ const PLANT_COLLECTION = [
         signature: "Lavabo e terraço gourmet",
         summary:
           "Planta pensada para receber, com lavabo, varanda com churrasqueira e previsão de ar-condicionado na sala.",
-        image: "/Plantas/apartamento-70m2.png",
+        image: "/Plantas/apartamento-70m2-3dorms-1suite.png",
         highlights: [
           "Lavabo integrado à área social",
           "Terraço com churrasqueira a carvão",
@@ -76,7 +76,7 @@ const PLANT_COLLECTION = [
         signature: "Lavabo e terraço amplo",
         summary:
           "Tipologia versátil com suítes espelhadas, terraço generoso e preparo completo para climatização.",
-        image: "/Plantas/apartamento-59m2.png",
+        image: "/Plantas/apartamento-59m2-2dorms-2suites.png",
         highlights: [
           "Lavabo e terraço com churrasqueira a carvão",
           "1 vaga de garagem",
@@ -97,7 +97,7 @@ const PLANT_COLLECTION = [
         signature: "Terraço com churrasqueira",
         summary:
           "Ambientes integrados que se abrem para um terraço amplo, com infraestrutura para climatização nos principais cômodos.",
-        image: "/Plantas/apartamento-56m2.png",
+        image: "/Plantas/apartamento-56m2-2dorms-1suite.png",
         highlights: [
           "Terraço com churrasqueira a carvão",
           "1 vaga de garagem",
@@ -126,7 +126,7 @@ const PLANT_COLLECTION = [
         signature: "Terraço garden com churrasqueira",
         summary:
           "Integração total entre áreas internas e externas, com terraço ajardinado e preparo para climatização completa.",
-        image: "/Plantas/garden-97m2.png",
+        image: "/Plantas/garden-97m2-3dorms-2suites.png",
         highlights: [
           "Terraço garden com churrasqueira a carvão",
           "2 vagas de garagem",
@@ -147,7 +147,7 @@ const PLANT_COLLECTION = [
         signature: "Lavabo e terraço garden",
         summary:
           "Duas suítes completas somadas a um terraço garden com churrasqueira, garantindo ventilação natural e conforto.",
-        image: "/Plantas/garden-93m2.png",
+        image: "/Plantas/garden-93m2-2dorms-2suites.png",
         highlights: [
           "Lavabo e terraço garden com churrasqueira a carvão",
           "1 vaga de garagem",
@@ -168,7 +168,7 @@ const PLANT_COLLECTION = [
         signature: "Terraço garden expansivo",
         summary:
           "Conceito garden com ambientes integrados e terraço amplo para criar lounges externos exclusivos.",
-        image: "/Plantas/garden-92m2.png",
+        image: "/Plantas/garden-92m2-2dorms-1suite.png",
         highlights: [
           "Terraço garden com churrasqueira a carvão",
           "1 vaga de garagem",
@@ -196,7 +196,7 @@ const PLANT_COLLECTION = [
         signature: "Terraço panorâmico com churrasqueira",
         summary:
           "Cobertura com ventilação natural nos banheiros, terraço generoso e esquadrias ampliadas para máxima entrada de luz.",
-        image: "/Plantas/penthouse-101m2.png",
+        image: "/Plantas/penthouse-101m2-3dorms-2suites.png",
         highlights: [
           "Terraço panorâmico com churrasqueira a carvão",
           "2 vagas de garagem",
@@ -215,7 +215,7 @@ const PLANT_COLLECTION = [
         signature: "Lavabo e terraço panorâmico",
         summary:
           "Penthouse que combina lavabo, áreas integradas e preparo completo para climatização em sala e suíte.",
-        image: "/Plantas/penthouse-110m2.png",
+        image: "/Plantas/penthouse-110m2-3dorms-1suite.png",
         highlights: [
           "Lavabo e terraço panorâmico com churrasqueira a carvão",
           "2 vagas de garagem",
@@ -235,7 +235,7 @@ const PLANT_COLLECTION = [
         signature: "Terraço panorâmico integrador",
         summary:
           "Cobertura compacta com dois dormitórios, terraço panorâmico e infraestrutura de climatização em todos os ambientes.",
-        image: "/Plantas/penthouse-84m2.png",
+        image: "/Plantas/penthouse-84m2-2dorms-1suite.png",
         highlights: [
           "Terraço panorâmico com churrasqueira a carvão",
           "2 vagas de garagem",
@@ -483,7 +483,7 @@ const Plantas = () => {
           </article>
 
           <figure
-            className="relative overflow-hidden rounded-3xl border bg-white shadow-[0_45px_80px_rgba(0,0,0,0.1)]"
+            className="relative flex min-h-[400px] overflow-hidden rounded-3xl border bg-white shadow-[0_45px_80px_rgba(0,0,0,0.1)]"
             style={{ borderColor: `${PALETTE.soft}66` }}
             role="button"
             tabIndex={0}
@@ -498,9 +498,12 @@ const Plantas = () => {
             <img
               src={activeLayout.image}
               alt={`Planta ${activeLayout.name}`}
-              className="h-full w-full object-contain bg-white p-6"
+              className="h-full w-full flex-1 object-contain bg-white p-6"
               loading="lazy"
               decoding="async"
+              onError={(e) => {
+                console.error("Erro ao carregar imagem:", activeLayout.image);
+              }}
             />
             <figcaption className="absolute bottom-4 left-4 right-4 rounded-full bg-white/85 px-4 py-2 text-center text-xs uppercase tracking-[0.35em] text-[#7B4633] shadow-sm">
               Planta {activeLayout.name}
@@ -533,6 +536,9 @@ const Plantas = () => {
                 src={activeLayout.image}
                 alt={`Planta ${activeLayout.name}`}
                 className="h-full w-full max-h-[80vh] object-contain bg-white p-4 md:p-6"
+                onError={(e) => {
+                  console.error("Erro ao carregar imagem no modal:", activeLayout.image);
+                }}
               />
             </div>
           </div>

@@ -14,6 +14,8 @@ const Menu = () => {
     { title: "Perspectivas", path: "/perspectivas", description: "Visualize os ambientes" },
     { title: "Plantas", path: "/plantas", description: "Descubra as tipologias" },
     { title: "Localização", path: "/localizacao", description: "Localização privilegiada" },
+    { title: "Filme", path: "/filme", description: "Assista ao vídeo" },
+    { title: "Safira Edition", path: "/safira-edition", description: "Edição exclusiva" },
   ];
 
   const handleMenuClick = (path: string, index: number) => {
@@ -70,7 +72,7 @@ const Menu = () => {
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center gap-4 text-center">
-                  <span className={`font-playfair text-3xl tracking-wider italic transition-colors duration-500 ${hoveredIndex === index || activeIndex === index ? "text-gold" : "text-foreground"}`}>
+                  <span className={`font-playfair text-3xl tracking-wider italic transition-colors duration-500 ${hoveredIndex === index || activeIndex === index ? "text-gold" : "text-white/95"}`}>
                     {item.title}
                   </span>
                   <span className="font-cormorant text-base uppercase tracking-[0.3em] text-white/80 transition-all duration-500 group-hover:text-white">

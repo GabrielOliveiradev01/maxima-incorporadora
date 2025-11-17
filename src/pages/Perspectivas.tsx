@@ -198,11 +198,6 @@ const Perspectivas = () => {
           <h2 className="font-playfair text-2xl md:text-3xl text-foreground/90">
             {currentImage.title}
           </h2>
-          {currentImage.subtitle && (
-            <p className="font-cormorant text-sm tracking-[0.2em] text-foreground/60 mt-2">
-              {currentImage.subtitle}
-            </p>
-          )}
         </div>
 
         {/* Thumbnails */}

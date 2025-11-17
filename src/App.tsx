@@ -9,6 +9,8 @@ import Implantacao from "./pages/Implantacao";
 import Perspectivas from "./pages/Perspectivas";
 import Localizacao from "./pages/Localizacao";
 import Plantas from "./pages/Plantas";
+import Filme from "./pages/Filme";
+import SafiraEdition from "./pages/SafiraEdition";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +28,8 @@ const App = () => (
           <Route path="/perspectivas" element={<Perspectivas />} />
           <Route path="/plantas" element={<Plantas />} />
           <Route path="/localizacao" element={<Localizacao />} />
+          <Route path="/filme" element={<Filme />} />
+          <Route path="/safira-edition" element={<SafiraEdition />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
