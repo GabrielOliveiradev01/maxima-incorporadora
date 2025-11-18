@@ -1,6 +1,6 @@
 import GeometricLines from "@/components/GeometricLines";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, Sparkles } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 
 const SafiraEdition = () => {
   const navigate = useNavigate();
@@ -35,40 +35,48 @@ const SafiraEdition = () => {
             </p>
           </header>
 
-          <section className="space-y-8 rounded-3xl bg-white/85 p-10 shadow-[0_25px_45px_rgba(0,0,0,0.08)]">
-            <div className="flex items-center gap-3 text-[#7B4633]">
-              <Sparkles className="h-6 w-6" />
-              <h2 className="text-lg font-semibold uppercase tracking-[0.35em]">Exclusividade em cada detalhe</h2>
-            </div>
-            <p className="text-base leading-relaxed text-[#3D2A22]/80">
-              A Safira Edition representa o ápice do luxo e da exclusividade no Máxima Ares Altino. Esta edição
-              limitada oferece acabamentos premium, layouts diferenciados e uma experiência de morar única, pensada
-              para quem busca o extraordinário em cada detalhe.
-            </p>
-            <div className="grid gap-6 md:grid-cols-2">
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633]">
-                  Características exclusivas
-                </h3>
-                <ul className="space-y-2 text-sm text-[#3D2A22]/80">
-                  <li>• Acabamentos de primeira linha</li>
-                  <li>• Layouts diferenciados e exclusivos</li>
-                  <li>• Áreas privativas ampliadas</li>
-                  <li>• Design de interiores assinado</li>
-                </ul>
+          <section className="grid gap-8 md:grid-cols-2">
+            {/* VEMPLAN */}
+            <article className="relative overflow-hidden rounded-3xl bg-white/85 p-8 shadow-[0_25px_45px_rgba(0,0,0,0.08)] backdrop-blur-sm">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#7B4633] via-[#A15C46] to-transparent" />
+              <div className="mb-6 flex items-center gap-3">
+                <img 
+                  src="/vemplan.png" 
+                  alt="VEMPLAN" 
+                  className="h-12 w-auto object-contain"
+                />
               </div>
-              <div className="space-y-4">
-                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633]">
-                  Experiência premium
-                </h3>
-                <ul className="space-y-2 text-sm text-[#3D2A22]/80">
-                  <li>• Atendimento personalizado</li>
-                  <li>• Entrega com decoração completa</li>
-                  <li>• Benefícios exclusivos</li>
-                  <li>• Edição limitada e numerada</li>
-                </ul>
+              <p className="text-sm leading-relaxed text-[#3D2A22]/80">
+                Com a expertise de mais de 30 anos de atuação nas áreas de marketing, desenvolvimento e consultoria
+                imobiliária, a VEMPLAN é fruto da união entre o comprometimento e a sólida experiência de profissionais
+                verdadeiramente apaixonados pelo que fazem. Sua estratégia comercial é fortemente marcada pelo
+                aprimoramento contínuo das práticas de marketing e vendas, pela modernização constante dos processos e
+                adequação aos indicadores de mercado, não somente no que se refere à preferência dos consumidores, mas
+                também às regiões mais propícias para a implantação de projetos imobiliários de sucesso. Desenvolvendo
+                soluções sempre adequadas às exigências de seus clientes, a VEMPLAN credita suas conquistas à prática
+                da responsabilidade social e ao forte compromisso que mantém com incorporadores e construtores. O que
+                lhe garante confiança e solidez e a faz ser reconhecida ano após ano como uma referência no setor.
+              </p>
+            </article>
+
+            {/* ZAFIR CONSTRUTORA */}
+            <article className="relative overflow-hidden rounded-3xl bg-white/85 p-8 shadow-[0_25px_45px_rgba(0,0,0,0.08)] backdrop-blur-sm">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#8F4C37] via-[#A15C46] to-transparent" />
+              <div className="mb-6 flex items-center gap-3">
+                <img 
+                  src="/zafira.png" 
+                  alt="ZAFIR CONSTRUTORA" 
+                  className="h-12 w-auto object-contain"
+                />
               </div>
-            </div>
+              <p className="text-sm leading-relaxed text-[#3D2A22]/80">
+                Com destacada atuação no mercado, a ZAFIR CONSTRUTORA traz em sua área técnica a satisfação de seus
+                clientes, traduzidos em mais de 650.000 m² de área construída e mais de 6.000 unidades entregues.
+                Reconhecida pela execução de obras com qualidade, a ZAFIR CONSTRUTORA imprime em seus empreendimentos
+                a busca constante pela melhoria da qualidade dos seus produtos, refletidos na qualidade de vida de seus
+                clientes.
+              </p>
+            </article>
           </section>
         </div>
       </main>

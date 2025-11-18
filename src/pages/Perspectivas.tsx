@@ -1,112 +1,99 @@
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 const PERSPECTIVA_GALLERY = [
   {
-    file: "Zafir_Presidente_Altino_Voo_Piscina_HR.jpg",
-    title: "Piscina Sky Lounge",
-    subtitle: "Bungalows imersivos com vista elevada",
+    file: "PISCINA ADULTO E INFANTIL COM SOLARIUM.jpg",
+    title: "Piscina Adulto e Infantil com Solarium",
   },
   {
-    file: "Zafir_Presidente_Altino_Piscina_Bangalo_HR.jpg",
-    title: "Piscina Bangalô Privilege",
-    subtitle: "Águas tranquilas, lounges exclusivos",
+    file: "BANGALÔS.jpg",
+    title: "Bangalôs",
   },
   {
-    file: "Zafir_Presidente_Altino_Beach_Tennis_HR.jpg",
-    title: "Beach Tennis Club",
-    subtitle: "Esporte à beira de um cenário urbano",
+    file: "BEACH TENNIS.jpg",
+    title: "Beach Tennis",
   },
   {
-    file: "Zafir_Presidente_Altino_Sport_Bar_HR.jpg",
-    title: "Sport Bar Signature",
-    subtitle: "Celebrar vitórias em alto estilo",
+    file: "SPORTS BAR.jpg",
+    title: "Sports Bar",
   },
   {
-    file: "Zafir_Presidente_Altino_Churrasqueira_HR.jpg",
-    title: "Terraço Gourmet",
-    subtitle: "Sabores ao ar livre com atmosfera acolhedora",
+    file: "CHURRASQUEIRA.jpg",
+    title: "Churrasqueira",
   },
   {
-    file: "Zafir_Presidente_Altino_Gourmet_HR.jpg",
-    title: "Cozinha Experiência",
-    subtitle: "Gastronomia autoral em ambiente sofisticado",
+    file: "ESPAÇO GOURMET.jpg",
+    title: "Espaço Gourmet",
   },
   {
-    file: "Zafir_Presidente_Altino_Mini_Market_HR.jpg",
-    title: "Mini Market 24h",
-    subtitle: "Praticidade premium ao alcance das mãos",
+    file: "MINI MARKET.jpg",
+    title: "Mini Market",
   },
   {
-    file: "Zafir_Presidente_Altino_Coworking_HR.jpg",
-    title: "Coworking Boutique",
-    subtitle: "Produtividade envolta em design contemporâneo",
+    file: "COWORKING.jpg",
+    title: "Coworking",
   },
   {
-    file: "Zafir_Presidente_Altino_Espaco_Corpo_HR.jpg",
-    title: "Studio Corpore",
-    subtitle: "Wellness intensivo com equipamentos de ponta",
+    file: "ESPAÇO CORPO.jpg",
+    title: "Espaço Corpo",
   },
   {
-    file: "Zafir_Presidente_Altino_Yoga_HR.jpg",
-    title: "Sala Zen & Yoga",
-    subtitle: "Respire equilíbrio entre luz e textura",
+    file: "ESPAÇO YOGA.jpg",
+    title: "Espaço Yoga",
   },
   {
-    file: "Zafir_Presidente_Altino_Espaco_Jovem_HR.jpg",
-    title: "Espaço Jovem Urbano",
-    subtitle: "Um lounge criativo para novas conexões",
+    file: "ESPAÇO JOVEM.jpg",
+    title: "Espaço Jovem",
   },
   {
-    file: "Zafir_Presidente_Altino_Brinquedoteca_HR.jpg",
-    title: "Brinquedoteca Explorers",
-    subtitle: "Aventuras lúdicas para a infância",
+    file: "BRINQUEDOTECA.jpg",
+    title: "Brinquedoteca",
   },
   {
-    file: "Zafir_Presidente_Altino_Playground_HR.jpg",
-    title: "Playground Adventure",
-    subtitle: "Diversão com toques de paisagismo autoral",
+    file: "PLAYGROUND.jpg",
+    title: "Playground",
   },
   {
-    file: "Zafir_Presidente_Altino_Pet_Care_HR.jpg",
-    title: "Pet Care Experience",
-    subtitle: "Bem-estar completo para os companheiros",
+    file: "PET CARE.jpg",
+    title: "Pet Care",
   },
   {
-    file: "Zafir_Presidente_Altino_Quadra_Poli_HR.jpg",
-    title: "Quadra Multi Arenas",
-    subtitle: "Energia esportiva em ritmo urbano",
+    file: "QUADRA RECREATIVA.jpg",
+    title: "Quadra Recreativa",
   },
   {
-    file: "Zafir_Presidente_Altino_Redario_HR.jpg",
-    title: "Redário Contemplativo",
-    subtitle: "Calma suspendida sob o verde",
+    file: "REDÁRIO.jpg",
+    title: "Redário",
   },
   {
-    file: "Zafir_Presidente_Altino_Portaria_Diurna_HR.jpg",
-    title: "Portaria Galeria",
-    subtitle: "Recepção com curadoria de materiais",
+    file: "PORTARIA.jpg",
+    title: "Portaria",
   },
   {
-    file: "Zafir_Presidente_Altino_Hall_Lobby_HR.jpg",
-    title: "Hall Sculptural",
-    subtitle: "Primeira impressão em arquitetura sensorial",
+    file: "LOBBY.jpg",
+    title: "Lobby",
   },
   {
-    file: "Zafir_Presidente_Albino_Espaco_Mulher_HR.jpg",
-    title: "Espaço Mulher Signature",
-    subtitle: "Autocuidado com aura de salão boutique",
+    file: "ESPAÇO WELLNESS.jpg",
+    title: "Espaço Wellness",
   },
   {
-    file: "Zafir_Presidente_Altino_Spa_Privativo_HR.jpg",
+    file: "SPA PRIVATIVO.jpg",
     title: "Spa Privativo",
-    subtitle: "Imersão de relaxamento sob luz suave",
   },
   {
-    file: "Zafir_Presidente_Altino_Living_Ampliado_R02.jpg",
+    file: "LIVING AMPLIADO.jpg",
     title: "Living Ampliado",
-    subtitle: "Conforto ilimitado em layout personalizável",
+  },
+  {
+    file: "FITNESS.jpg",
+    title: "Fitness",
+  },
+  {
+    file: "SALÃO DE FESTAS.jpg",
+    title: "Salão de Festas",
   },
 ] as const;
 
@@ -117,6 +104,7 @@ const AUTO_PLAY_INTERVAL = 5000;
 const Perspectivas = () => {
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const base = import.meta.env.BASE_URL || "/";
   const normalizedBasePath = base.endsWith("/") ? base : `${base}/`;
@@ -133,6 +121,24 @@ const Perspectivas = () => {
     [normalizedBasePath, assetQuery],
   );
 
+  const goToPrevious = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    // Pausa autoplay temporariamente ao navegar manualmente
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  }, [images.length]);
+
+  const goToNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    // Pausa autoplay temporariamente ao navegar manualmente
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+      autoplayRef.current = null;
+    }
+  }, [images.length]);
+
   useEffect(() => {
     if (currentIndex >= images.length) {
       setCurrentIndex(0);
@@ -140,18 +146,42 @@ const Perspectivas = () => {
   }, [currentIndex, images.length]);
 
   useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        goToPrevious();
+      } else if (event.key === "ArrowRight") {
+        goToNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [goToPrevious, goToNext]);
+
+  useEffect(() => {
     if (images.length <= 1) {
       return;
     }
 
-    const intervalId = window.setInterval(() => {
+    // Limpa o intervalo anterior se existir
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+    }
+
+    // Reinicia o autoplay após 3 segundos de inatividade manual
+    const timeoutId = setTimeout(() => {
+      autoplayRef.current = window.setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, AUTO_PLAY_INTERVAL);
+    }, 3000);
 
     return () => {
-      window.clearInterval(intervalId);
+      clearTimeout(timeoutId);
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
     };
-  }, [images.length]);
+  }, [currentIndex, images.length]);
 
   const currentImage = images[currentIndex];
 
@@ -178,10 +208,10 @@ const Perspectivas = () => {
         </div>
 
         {/* Main Image */}
-        <div className="flex-1 px-6 pb-4 flex items-center justify-center">
+        <div className="flex-1 px-6 pb-4 flex items-center justify-center relative">
           <div
             key={currentImage.file}
-            className="w-full max-w-7xl animate-fade-in"
+            className="w-full max-w-7xl animate-fade-in relative"
           >
             <img
               src={currentImage.src}
@@ -190,6 +220,26 @@ const Perspectivas = () => {
               loading="lazy"
               decoding="async"
             />
+            
+            {/* Navigation Arrows */}
+            {images.length > 1 && (
+              <>
+                <button
+                  onClick={goToPrevious}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/50 backdrop-blur-sm text-white transition-all duration-300 hover:bg-black/70 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gold"
+                  aria-label="Imagem anterior"
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </button>
+                <button
+                  onClick={goToNext}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-black/50 backdrop-blur-sm text-white transition-all duration-300 hover:bg-black/70 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-gold"
+                  aria-label="Próxima imagem"
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </button>
+              </>
+            )}
           </div>
         </div>
 

@@ -25,7 +25,6 @@ const HIGHLIGHTS = [
       { label: "Borboletário Municipal de Osasco", detail: "9 min de carro" },
       { label: "Havan Osasco", detail: "4 min de carro" },
       { label: "Dozza", detail: "5 min a pé" },
-      { label: "Bio Ritmo Academia", detail: "4 min de carro" },
     ],
   },
   {
@@ -35,6 +34,7 @@ const HIGHLIGHTS = [
     items: [
       { label: "Colégio Presbiteriano Mackenzie", detail: "16 min de carro" },
       { label: "Colégio Educacional Máximo", detail: "9 min a pé" },
+      { label: "BIO RITMO Academia", detail: "4 min de carro" },
       { label: "Hospital e Maternidade São Luiz", detail: "12 min de carro" },
       { label: "Hospital Regional de Osasco", detail: "4 min de carro" },
     ],
@@ -55,27 +55,27 @@ const HIGHLIGHTS = [
 
 const LOCATION_GALLERY = [
   {
-    src: "/localizacao/mapa-conectividade.png",
+    src: "/localizacao/mapa-conectividade.jpg",
     alt: "Mapa com as principais conexões do bairro Presidente Altino",
     caption: "Mapa de conectividade",
   },
   {
-    src: "/localizacao/estacao-presidente-altino.png",
+    src: "/localizacao/estacao-presidente-altino.jpg",
     alt: "Estação Presidente Altino",
     caption: "Estação Presidente Altino a poucos passos",
   },
   {
-    src: "/localizacao/shopping-e-servicos.png",
+    src: "/localizacao/shopping-e-servicos.jpg",
     alt: "Área de compras e serviços no entorno",
     caption: "Compras, serviços e conveniência",
   },
   {
-    src: "/localizacao/educacao-e-saude.png",
+    src: "/localizacao/educacao-e-saude.jpg",
     alt: "Instituições de educação e saúde próximas",
     caption: "Educação e saúde ao redor",
   },
   {
-    src: "/localizacao/parques-e-lazer.png",
+    src: "/localizacao/parques-e-lazer.jpg",
     alt: "Parques e áreas de lazer próximos ao empreendimento",
     caption: "Parques e lazer para toda a família",
   },
@@ -109,6 +109,21 @@ const Localizacao = () => {
             Localização
           </h1>
             </div>
+            
+            {/* Main Location Image */}
+            <div className="w-full">
+              <figure className="relative overflow-hidden rounded-3xl border border-[#B18A74]/40 bg-white/80 shadow-[0_25px_45px_rgba(0,0,0,0.12)]">
+                <img
+                  src="/localizacao/mapa-do-lugar.jpg"
+                  alt="Mapa do lugar - Máxima Ares Altino"
+                  className="h-[400px] w-full object-cover md:h-[500px]"
+                  loading="eager"
+                  decoding="async"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+              </figure>
+            </div>
+            
             <p className="max-w-3xl text-base leading-relaxed text-[#3D2A22]/85">
               Morar em Presidente Altino é escolher um bairro que preserva a essência familiar enquanto oferece
               mobilidade, conveniência e segurança. Aqui, tempo de qualidade ganha um novo significado: estamos perto
@@ -171,7 +186,7 @@ const Localizacao = () => {
               <h2 className="text-lg font-semibold uppercase tracking-[0.35em]">Viva conectado ao melhor de Osasco</h2>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
-              {LOCATION_GALLERY.map((image) => (
+              {LOCATION_GALLERY.slice(1).map((image) => (
                 <figure
                   key={image.src}
                   className="group relative overflow-hidden rounded-3xl border border-[#B18A74]/40 bg-white/80 shadow-[0_18px_32px_rgba(0,0,0,0.08)] transition-transform duration-500 hover:-translate-y-1"

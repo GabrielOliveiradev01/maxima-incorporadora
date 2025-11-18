@@ -1,5 +1,3 @@
-import GeometricLines from "@/components/GeometricLines";
-import DecorativeFrames from "@/components/DecorativeFrames";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logoMaxima from "@/assets/logo-maxima-ares.png";
@@ -10,10 +8,10 @@ const Menu = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const menuItems = [
-    { title: "Implantação", path: "/implantacao", description: "Conheça o projeto" },
-    { title: "Perspectivas", path: "/perspectivas", description: "Visualize os ambientes" },
-    { title: "Plantas", path: "/plantas", description: "Descubra as tipologias" },
     { title: "Localização", path: "/localizacao", description: "Localização privilegiada" },
+    { title: "Perspectivas", path: "/perspectivas", description: "Visualize os ambientes" },
+    { title: "Implantações", path: "/implantacao", description: "Conheça o projeto" },
+    { title: "Plantas", path: "/plantas", description: "Descubra as tipologias" },
     { title: "Filme", path: "/filme", description: "Assista ao vídeo" },
     { title: "Safira Edition", path: "/safira-edition", description: "Edição exclusiva" },
   ];
@@ -33,9 +31,6 @@ const Menu = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/70" />
       </div>
-
-      <GeometricLines />
-      <DecorativeFrames />
 
       <main className="relative z-20 flex min-h-screen items-center justify-center px-6 py-16">
         <div className="w-full max-w-3xl text-center animate-fade-in">
@@ -72,10 +67,10 @@ const Menu = () => {
                 </div>
 
                 <div className="relative z-10 flex flex-col items-center gap-4 text-center">
-                  <span className={`font-playfair text-3xl tracking-wider italic transition-colors duration-500 ${hoveredIndex === index || activeIndex === index ? "text-gold" : "text-white/95"}`}>
+                  <span className={`font-playfair text-3xl tracking-wider italic transition-colors duration-500 ${hoveredIndex === index || activeIndex === index ? "text-gold" : "text-white"}`}>
                     {item.title}
                   </span>
-                  <span className="font-cormorant text-base uppercase tracking-[0.3em] text-white/80 transition-all duration-500 group-hover:text-white">
+                  <span className="font-cormorant text-base uppercase tracking-[0.3em] text-white/90 transition-all duration-500 group-hover:text-white">
                     {item.description}
                   </span>
                 </div>
