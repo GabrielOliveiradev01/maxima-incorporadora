@@ -53,9 +53,10 @@ export default defineConfig(({ mode }) => ({
           "**/videos/**",
           "**/Imagens/**",
           "**/IMPLATAÇÃO/**", // Pasta antiga com acento
+          "**/IMPLATAÇÃO/**", // Pasta com acento - imagens grandes
           "**/Plantas/**",
         ],
-        maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 MB para precache
+        maximumFileSizeToCacheInBytes: 2 * 1024 * 1024, // 2 MB para precache (padrão)
         runtimeCaching: [
           {
             urlPattern: /\.(?:mp4|webm|ogg)$/,
