@@ -3,7 +3,7 @@ import DecorativeFrames from "@/components/DecorativeFrames";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
-import logoMaxima from "@/assets/logo-maxima-transparent.png";
+import logoZafir from "@/assets/logo-maxima-transparent.png";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -66,8 +66,8 @@ const Index = () => {
           {/* Logo */}
           <div className="flex justify-center mb-12">
             <img 
-              src={logoMaxima} 
-              alt="Máxima Ares Altino" 
+              src={logoZafir} 
+              alt="Zafir Ares Altino" 
               className="w-full max-w-3xl h-auto animate-glow drop-shadow-2xl"
             />
           </div>

@@ -2,7 +2,7 @@ import GeometricLines from "@/components/GeometricLines";
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 
-const SafiraEdition = () => {
+const ZafirEdition = () => {
   const navigate = useNavigate();
 
   return (
@@ -27,7 +27,7 @@ const SafiraEdition = () => {
             <div className="space-y-4">
               <span className="text-xs uppercase tracking-[0.45em] text-[#7B4633]/70">Edição exclusiva</span>
               <h1 className="text-4xl font-semibold uppercase tracking-[0.4em] text-[#7B4633] md:text-5xl">
-                Safira Edition
+                Zafir Edition
               </h1>
             </div>
             <p className="max-w-3xl text-base leading-relaxed text-[#3D2A22]/85">
@@ -84,6 +84,5 @@ const SafiraEdition = () => {
   );
 };
 
-export default SafiraEdition;
-
+export default ZafirEdition;
 

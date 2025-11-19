@@ -12,7 +12,7 @@ const Implantacao = () => {
         label: "Pavimento Garagem 1",
         heading: "Pavimento Garagem 01",
         accent: "#A15C46",
-        image: "/implantacao/pavimento-garagem-1.png",
+        image: "https://66670533221b2cee3d4a1fa219156d7b.cdn.bubble.io/f1763505043557x339014631365089500/Pavimento%20Garagem%2001_.png",
         items: [
           { code: "12", title: "Mini Market" },
           { code: "13", title: "Espaço Corpo" },
@@ -24,7 +24,7 @@ const Implantacao = () => {
         label: "Pavimento Garagem 2",
         heading: "Pavimento Garagem 02",
         accent: "#9A533E",
-        image: "/implantacao/pavimento-garagem-2.png",
+        image: "https://66670533221b2cee3d4a1fa219156d7b.cdn.bubble.io/f1763505097667x104439122430115100/Pavimento%20Garagem%2002_.png",
         items: [
           { code: "09", title: "Espaço Gourmet" },
           { code: "10", title: "Salão de Festa" },
@@ -35,7 +35,7 @@ const Implantacao = () => {
         label: "Pavimento Garagem 3",
         heading: "Pavimento Garagem 03",
         accent: "#8F4C37",
-        image: "/implantacao/pavimento-garagem-3.png",
+        image: "https://66670533221b2cee3d4a1fa219156d7b.cdn.bubble.io/f1763505114733x760450620760222400/Pavimento%20Garagem%2003_.png",
         items: [
           { code: "01", title: "Porte Cochère" },
           { code: "02", title: "Acesso Veículos" },
@@ -52,7 +52,7 @@ const Implantacao = () => {
         label: "Pavimento Lazer",
         heading: "Pavimento Lazer",
         accent: "#7F3F2D",
-        image: "/implantacao/pavimento-lazer.png",
+        image: "https://66670533221b2cee3d4a1fa219156d7b.cdn.bubble.io/f1763505128518x805241997152029400/Pavimento%20Lazer_.png",
         items: [
           { code: "15", title: "Piscina Adulto" },
           { code: "16", title: "Piscina Infantil" },
@@ -105,7 +105,7 @@ const Implantacao = () => {
             </h1>
             <div className="h-[3px] w-32 bg-gradient-to-r from-transparent via-[#A15C46] to-transparent opacity-80" />
             <p className="max-w-2xl text-base text-[#7B4633]/80">
-              Explore cada pavimento e conheça as comodidades cuidadosamente distribuídas pelo Máxima Ares Altino.
+              Explore cada pavimento e conheça as comodidades cuidadosamente distribuídas pelo Zafir Ares Altino.
             </p>
           </header>
 
@@ -183,6 +183,161 @@ const Implantacao = () => {
                     </figcaption>
                   </figure>
                 )}
+              </div>
+            </article>
+          </section>
+
+          {/* Informações do Projeto */}
+          <section className="space-y-6">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-semibold uppercase tracking-[0.35em] text-[#7B4633] md:text-4xl">
+                Informações do Projeto
+              </h2>
+              <div className="h-[3px] w-32 bg-gradient-to-r from-transparent via-[#A15C46] to-transparent opacity-80" />
+            </div>
+
+            <article className="rounded-3xl bg-white/70 p-10 shadow-[0_25px_45px_rgba(0,0,0,0.08)] backdrop-blur-md">
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Endereço do Terreno
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      Rua Albino José Freixeda, 99 – Pres. Altino
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Projeto Legal
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      ZAFIR Construtora / Laboratório Urbano
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Projeto de Arquitetura
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      OSARQ Octávio de Siqueira Arquitetos
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Decoração e Interiores
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      Renata Cáfaro Arquitetura e Interiores
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Paisagismo
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      Faisal Arquitetos Paisagistas
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Área do Terreno
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      2.855,00 m²
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Número de Torres
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      Torre única
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Número de Elevadores
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      03 elevadores (dois sociais e um de serviço)
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Número de Pavimentos
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      28 Pavimentos
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Total de Unidades
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                      184 Apartamentos
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Metragens dos Apartamentos
+                    </h3>
+                    <ul className="space-y-2 text-base text-[#3D2A22]/85 leading-relaxed">
+                      <li>• Apartamentos de 2 dormitórios - A partir de 56 m²</li>
+                      <li>• Apartamentos de 3 dormitórios - A partir de 70 m²</li>
+                      <li>• Coberturas Penthouse - A partir de 101 m²</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Número de Unidades por Andar
+                    </h3>
+                    <ul className="space-y-2 text-base text-[#3D2A22]/85 leading-relaxed">
+                      <li>• Pav. Átrio (3ª laje): 6 unidades Garden</li>
+                      <li>• Pav. Tipo (4ª a 24ª laje): 8 unidades Tipo</li>
+                      <li>• Pav. Penthouse (25ª laje): 4 unidades Penthouse e 2 unidades Tipo</li>
+                      <li>• Pav. Penthouse (26ª laje): 4 unidades Penthouse</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-3">
+                      Vagas
+                    </h3>
+                    <p className="text-base text-[#3D2A22]/85 leading-relaxed mb-2">
+                      281 vagas de garagem (cobertas e descobertas)
+                    </p>
+                    <ul className="space-y-1 text-sm text-[#3D2A22]/75 leading-relaxed">
+                      <li>• 2 dormitórios: 1 vaga simples livre</li>
+                      <li>• 3 dormitórios: 2 vagas</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10 pt-8 border-t border-[#B18A74]/30">
+                <h3 className="text-sm font-semibold uppercase tracking-[0.3em] text-[#7B4633] mb-4">
+                  Áreas Comuns Equipadas e Decoradas*
+                </h3>
+                <p className="text-base text-[#3D2A22]/85 leading-relaxed">
+                  Lobby com Pé-Direito Duplo, Piscina Adulto e Infantil com Solarium, Beach Tennis, Sports Bar, Fitness, Espaço Yoga, Espaço Corpo, Bangalôs, Quadra Recreativa, Salão de Festas, Churrasqueira, Gazebo Gourmet com Spa Privativo, Espaço Wellness, Espaço Jovem, Playground, Brinquedoteca, Coworking, Redário, Praça da Leitura, Pet Care, Pet Place e Mini Market.
+                </p>
               </div>
             </article>
           </section>

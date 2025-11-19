@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import logoMaxima from "@/assets/logo-maxima-ares.png";
+import logoZafir from "@/assets/logo-maxima-ares.png";
 
 const Menu = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ const Menu = () => {
     { title: "Implantações", path: "/implantacao", description: "Conheça o projeto" },
     { title: "Plantas", path: "/plantas", description: "Descubra as tipologias" },
     { title: "Filme", path: "/filme", description: "Assista ao vídeo" },
-    { title: "Safira Edition", path: "/safira-edition", description: "Edição exclusiva" },
+    { title: "Zafir Edition", path: "/zafir-edition", description: "Edição exclusiva" },
   ];
 
   const handleMenuClick = (path: string, index: number) => {
@@ -37,8 +37,8 @@ const Menu = () => {
             {/* Logo */}
           <div className="flex justify-center mb-10">
             <img
-              src={logoMaxima}
-              alt="Máxima Ares Altino"
+              src={logoZafir}
+              alt="Zafir Ares Altino"
               className="h-auto w-full max-w-lg drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)]"
             />
           </div>

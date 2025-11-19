@@ -48,7 +48,7 @@ const Filme = () => {
               </video>
             </div>
             <p className="text-center text-sm text-[#3D2A22]/70">
-              Conheça o Máxima Ares Altino em detalhes através do nosso vídeo de apresentação.
+              Conheça o Zafir Ares Altino em detalhes através do nosso vídeo de apresentação.
             </p>
           </section>
         </div>

@@ -28,7 +28,7 @@ const Diferenciais = () => {
 
           <div className="space-y-6 font-cormorant text-xl text-foreground/80 leading-relaxed">
             <p>
-              Conteúdo sobre diferenciais do projeto Máxima.
+              Conteúdo sobre diferenciais do projeto Zafir.
             </p>
           </div>
         </div>

@@ -115,7 +115,7 @@ const Localizacao = () => {
               <figure className="relative overflow-hidden rounded-3xl border border-[#B18A74]/40 bg-white/80 shadow-[0_25px_45px_rgba(0,0,0,0.12)]">
                 <img
                   src="/localizacao/mapa-do-lugar.jpg"
-                  alt="Mapa do lugar - Máxima Ares Altino"
+                  alt="Mapa do lugar - Zafir Ares Altino"
                   className="h-[400px] w-full object-cover md:h-[500px]"
                   loading="eager"
                   decoding="async"
