@@ -228,8 +228,8 @@ const PLANT_COLLECTION = [
       },
       {
         id: "penthouse-110-2dorms",
-        name: "110 m² · 2 Dorms. (1 Suíte)",
-        area: "110 m²",
+        name: "101 m² · 2 Dorms. (1 Suíte)",
+        area: "101 m²",
         dorms: "2 dorms. (1 suíte)",
         vagas: "2 vagas",
         signature: "Terraço panorâmico exclusivo",
